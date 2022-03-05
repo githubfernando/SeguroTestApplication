@@ -23,7 +23,7 @@ namespace WebApplicationSeguros.Models
 
         [Required]
         [Display(Name = "Cover Type")]
-        public int CoverTypeId { get; set; }
+        public CoverType CoverType { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]
@@ -31,7 +31,6 @@ namespace WebApplicationSeguros.Models
         public DateTime StartDatePoliceValidity { get; set; }
 
         [Required]
-        [DataType(DataType.DateTime)]
         [Display(Name = "Coverage Period")]
         public int CoveragePeriod { get; set; }
 
@@ -44,6 +43,11 @@ namespace WebApplicationSeguros.Models
         [DataType(DataType.Currency)]
         [Display(Name = "Type Risk")]
         public string TypeRisk { get; set; }
+
+        public InsurancePolicy()
+        {
+            CoverType = new CoverType();
+        }
 
     }
 }

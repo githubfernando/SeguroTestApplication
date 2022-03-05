@@ -13,6 +13,7 @@ namespace WebApplicationSeguros.Data
         { 
         
         }
-        public DbSet<CoverType> converTypes { get; set; }
+        public DbSet<InsurancePolicy> InsurancePolicies { get; set; }
+        public DbSet<CoverType> CoverTypes { get; set; }
     }
 }
