@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApplicationSeguros.Models.InsurancePolicy>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Insurance List</h1>
+
+<p>
+    <a asp-action="Create">Create New Insurance</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdentificationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameCoverType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoverPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDatePoliceValidity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoveragePeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameTypeRisk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdentificationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameCoverType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoverPercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDatePoliceValidity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoveragePeriod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameTypeRisk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Cancel</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

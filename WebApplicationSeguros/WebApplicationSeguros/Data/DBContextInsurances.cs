@@ -15,5 +15,7 @@ namespace WebApplicationSeguros.Data
         }
         public DbSet<InsurancePolicy> InsurancePolicies { get; set; }
         public DbSet<CoverType> CoverTypes { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<TypeRisk> TypeRisks { get; set; }
     }
 }

@@ -12,18 +12,28 @@ namespace WebApplicationSeguros.Models
         public int id { get; set; }
 
         [Required]
+        [StringLength(20)]
+        [Display(Name = "Identification Customer")]
+        public string IdentificationNumber {get; set;}
+
+        [Required]
         [StringLength(100)]
-        [Display(Name = "Name")]
+        [Display(Name = "Name Policy")]
         public string Name { get; set; }
 
         [Required]
         [StringLength(100)]
-        [Display(Name = "Description")]
+        [Display(Name = "Policy description")]
         public string Description { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
         [Display(Name = "Cover Type")]
-        public CoverType CoverType { get; set; }
+        public string NameCoverType { get; set; }
+        [Required]
+        [DataType(DataType.Currency)]
+        [Display(Name = "Cover percent")]
+        public decimal CoverPercent { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]
@@ -42,12 +52,23 @@ namespace WebApplicationSeguros.Models
         [Required]
         [DataType(DataType.Currency)]
         [Display(Name = "Type Risk")]
-        public string TypeRisk { get; set; }
+        public string NameTypeRisk { get; set; }
 
-        public InsurancePolicy()
-        {
-            CoverType = new CoverType();
-        }
+        [Required]
+        [Display(Name = "Insurance Active")]
+        public bool Active { get; set; }
+
+        public CoverType CoverType { get; set; }
+        public TypeRisk TypeRisk { get; set; }
+        public Customer Customer { get; set; }
+
+        //public InsurancePolicy()
+        //{
+        //    CoverType = new CoverType();
+        //    TypeRisk = new TypeRisk();
+        //    Customer = new Customer();
+        //    Active = true;
+        //}
 
     }
 }
